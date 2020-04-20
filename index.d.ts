@@ -24,8 +24,6 @@ declare class Pjax {
 
   attachLink(el: HTMLAnchorElement): void;
 
-  attachForm(el: HTMLFormElement): void;
-
   forEachSelectors(cb: ElementFunction, context: Pjax, DOMcontext?: Element | Document): void;
 
   switchesSelectors(selectors: string[], fromEl: Element | Document, toEl: Element | Document, options: Pjax.IOptions): void;
@@ -128,14 +126,6 @@ declare namespace Pjax {
     history: boolean;
 
     /**
-     * Function that allows you to add behavior for analytics.
-     * By default it tries to track a pageview with Google Analytics (if it exists on the page).
-     * It's called every time a page is switched, even for history navigation.
-     * Set to false to disable this behavior.
-     */
-    analytics: Function | false;
-
-    /**
      * When set to an integer, this is the value (in px from the top of the page) to scroll to when a page is switched.
      * When set to an array of 2 integers ([x, y]), this is the value to scroll both horizontally and vertically.
      * Set this to false to disable scrolling, which will mean the page will stay in that same position it was before
@@ -147,11 +137,6 @@ declare namespace Pjax {
      * When set to true, attempt to restore the scroll position when navigating backwards or forwards.
      */
     scrollRestoration: boolean;
-
-    /**
-     * When set to true, append a timestamp query string segment to the requested URLs in order to skip browser cache.
-     */
-    cacheBust: boolean;
 
     /**
      * Enables verbose mode.

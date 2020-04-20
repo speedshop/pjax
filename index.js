@@ -79,8 +79,6 @@ Pjax.prototype = {
 
   attachLink: require("./lib/proto/attach-link"),
 
-  attachForm: require("./lib/proto/attach-form"),
-
   forEachSelectors: function(cb, context, DOMcontext) {
     return require("./lib/foreach-selectors").bind(this)(
       this.options.selectors,
@@ -249,10 +247,6 @@ Pjax.prototype = {
 
     // Fire Events
     trigger(document, "pjax:complete pjax:success", state.options);
-
-    if (typeof state.options.analytics === "function") {
-      state.options.analytics();
-    }
 
     if (state.options.history) {
       // First parse url and check for hash to override scroll

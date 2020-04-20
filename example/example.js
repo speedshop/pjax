@@ -14,7 +14,7 @@ var initButtons = function() {
 
       if (el.getAttribute("data-manual-trigger-override") === "true") {
         // Manually load URL with overridden Pjax instance options
-        pjax.loadUrl("/example/page2.html", { cacheBust: false });
+        pjax.loadUrl("/example/page2.html");
       } else {
         // Manually load URL with current Pjax instance options
         pjax.loadUrl("/example/page2.html");
